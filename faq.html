@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ page</title>
+    <link rel="shortcut icon" href="assets/terminal.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Bootstrap 5.3.7 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-..." crossorigin="anonymous">
+    <!-- Bootstrap Icons (already present, but keep latest) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap">
+    <link rel="stylesheet" href="css/navigation.css">
+    <link rel="stylesheet" href="css/FAQ.css">
+    <link rel="stylesheet" href="css/hero.css">
+    <link rel="stylesheet" href="css/button.css">
+</head>
+<body>
+    <nav class="navbar px-4 py-3">
+        <div class="d-flex align-items-center hide-on-mobile">
+          <a href="index.html" class="logo">
+          <img src="assets/terminal.svg" alt="Logo" height="40" />
+          <span class="logo-title">LaunchCode!</span>
+          </a>
+        </div>
+    
+        <div class="nav-links d-none d-md-flex">
+          <a href="index.html" class="nav-item">Home</a>
+          <a href="FAQ.html" class="nav-item active">FAQ</a>
+          <a href="courses.html" class="nav-item">Courses</a>
+        </div>
+    
+        <div class="btn-sm d-none d-md-block">
+          <a href="signup.html" class="btn btn-signup btn-sm">Sign Up Now!</a>
+        </div>
+      </nav>
+    
+      <!-- MOBILE MENU -->
+      <div class="d-md-none menu-container">
+        <div class="glass-cont" id="glassCard">
+          <div class="menu-icon" id="menuBtn">
+            <div class="menu-line"></div>
+            <div class="menu-line"></div>
+          </div>
+          <a href="index.html" class="nav-item">Home</a>
+          <a href="FAQ.html" class="nav-item active">FAQ</a>
+          <a href="courses.html" class="nav-item">Courses</a>
+          <a href="signup.html" class="btn btn-signup2 btn-sm">Sign Up Now!</a>
+        </div>
+      </div>
+        
+    <div class="background-glow"></div>
+      <section class="hero text-center d-flex flex-column align-items-center justify-content-center" style="min-height: 60vh;">
+    <div class="faq-hero-icon mb-3">
+      <i class="bi bi-stars animated-icon-static" style="font-size: 3.5rem;"></i>
+    </div>
+    <h1 class="display-4 fw-bold mb-2">Welcome to LaunchCode FAQ</h1>
+    <p class="lead mb-3">Singapore’s coding community for teens. <span class="highlight">Learn. Build. Belong.</span></p>
+    <div class="community-banner glass-card mb-4 p-3 d-inline-block">
+      <span class="fw-bold" style="font-family: 'Orbitron', monospace; font-size: 1.2rem; color: #00ffd0;">🚀 Community Launches: 8/9/2025!</span>
+    </div>
+    <p class="mb-0 text-info">Ready to join the next wave of Singapore’s young coders?</p>
+  </section>
+
+  <!-- FAQ Section -->
+    <main class="container my-5 gsap-animate">
+        <section class="faq-section" id="faq">
+            <h2 class="text-center mb-4 glassy-heading highlight">Frequently Asked Questions</h2>
+            <!-- Getting Started Section -->
+            <h3 class="text-center mt-5 mb-3"><span class="highlight glassy-heading">// Getting Started</span></h3>
+            <div class="accordion glass-card" id="faqAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="heading1">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
+                            I'm in Sec 4/5 or just graduated. Where do I even begin with coding?
+                        </button>
+                    </h2>
+                    <div id="collapse1" class="accordion-collapse collapse" aria-labelledby="heading1" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Welcome to the future! Our courses are designed to get you started on the right path. You can begin with <span class="faq-keyword">Atomic HTML</span> and <span class="faq-keyword">Dope with CSS</span> to master the building blocks of the web, then move on to <span class="faq-keyword">Interactive JS</span> to bring your creations to life. No prior experience is needed, just curiosity!
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="heading2">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                            Do I need a super powerful gaming PC to start coding?
+                        </button>
+                    </h2>
+                    <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="heading2" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Nah, not at all! For most beginner coding, a standard laptop or even a Chromebook is totally fine. You'll mainly be using a web browser and a text editor. Save that gaming rig money for something else (like more snacks for late-night coding sessions)!
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="heading3">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                            Is coding just for super smart, math-whiz people?
+                        </button>
+                    </h2>
+                    <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="heading3" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Absolutely not! Coding is more about <span class="faq-keyword">problem-solving</span> and <span class="faq-keyword">creativity</span> than just math. If you enjoy puzzles, building things, or just making cool stuff happen, you've got what it takes. We break down complex topics into easy-to-understand steps, no advanced math degree required!
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="heading4">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+                            How long does it take to learn enough to build something cool and impactful?
+                        </button>
+                    </h2>
+                    <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="heading4" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            You'd be surprised! With our interactive courses, you could be building a simple website, a fun game, or even a small utility app in just a few weeks. Consistency is key. The more you practice, the faster you'll level up your skills and create awesome projects that can make a real difference.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Impact & Benefits Section -->
+            <h3 class="text-center mt-5 mb-3"><span class="highlight glassy-heading">// Impact & Benefits</span></h3>
+            <div class="accordion glass-card" id="faqAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="heading5">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
+                            How can learning to code impact my life and future?
+                        </button>
+                    </h2>
+                    <div id="collapse5" class="accordion-collapse collapse" aria-labelledby="heading5" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Coding empowers you to be a creator, not just a consumer. You'll gain valuable <span class="faq-keyword">problem-solving skills</span>, enhance your <span class="faq-keyword">logical thinking</span>, and unlock endless possibilities for innovation. It's a skill that future-proofs your career, opens doors to exciting opportunities, and allows you to build solutions for real-world problems.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="heading6">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6" aria-expanded="false" aria-controls="collapse6">
+                            What are the practical benefits of coding for someone my age?
+                        </button>
+                    </h2>
+                    <div id="collapse6" class="accordion-collapse collapse" aria-labelledby="heading6" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Beyond future careers, coding helps you think critically, break down complex challenges, and express your creativity digitally. You can build personal projects, create tools for your schoolwork, or even develop a portfolio that stands out when applying for polytechnics, universities, or internships in Singapore. It's a skill that makes you adaptable and highly sought after.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Future & Careers Section -->
+            <h3 class="text-center mt-5 mb-3"><span class="highlight glassy-heading">// Future & Careers</span></h3>
+            <div class="accordion glass-card" id="faqAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="heading7">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7" aria-expanded="false" aria-controls="collapse7">
+                            Can coding actually help me get a job or internship after secondary school in Singapore?
+                        </button>
+                    </h2>
+                    <div id="collapse7" class="accordion-collapse collapse" aria-labelledby="heading7" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Absolutely! Singapore's tech scene is booming, and companies are always looking for talented coders, even at entry-level or for internships. Learning to code now gives you a huge head start, whether you plan to pursue a diploma at a polytechnic, a degree at a local university, or jump straight into a tech role. Your portfolio of projects will speak volumes!
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="heading8">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8" aria-expanded="false" aria-controls="collapse8">
+                            What kind of jobs or business opportunities can I explore with coding skills?
+                        </button>
+                    </h2>
+                    <div id="collapse8" class="accordion-collapse collapse" aria-labelledby="heading8" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            The possibilities are vast! You could become a <span class="faq-keyword">Web Developer</span>, <span class="faq-keyword">Mobile App Developer</span>, Game Developer, Data Analyst, or even a Cybersecurity Specialist. For business, you can create your own e-commerce sites, build custom tools for small businesses, offer freelance web development services, or even launch your own tech startup. Coding is the backbone of almost every industry now!
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="heading9">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9" aria-expanded="false" aria-controls="collapse9">
+                            Is AI going to take all the coding jobs?
+                        </button>
+                    </h2>
+                    <div id="collapse9" class="accordion-collapse collapse" aria-labelledby="heading9" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Not really! <span class="faq-keyword">AI</span> is more of a powerful tool that helps coders be more efficient. It can automate repetitive tasks, but it still needs human creativity, problem-solving, and critical thinking to build and manage complex systems. Learning about AI can even be a career path itself, as someone needs to build and manage those AI systems!
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="heading10">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse10" aria-expanded="false" aria-controls="collapse10">
+                            Should I go to polytechnic/university for computer science, or can I learn enough online?
+                        </button>
+                    </h2>
+                    <div id="collapse10" class="accordion-collapse collapse" aria-labelledby="heading10" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Both paths have their unique strengths! Online platforms like Launch Code give you practical, in-demand skills quickly. Polytechnics and universities offer a deeper theoretical understanding, a broader network, and a recognized qualification. Many successful developers are self-taught or combine online learning with formal education. Online learning is an excellent way to start and build a strong portfolio before deciding your next step!
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Challenges & Tips Section -->
+            <h3 class="text-center mt-5 mb-3"><span class="highlight glassy-heading">// Challenges & Tips</span></h3>
+            <div class="accordion glass-card" id="faqAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="heading11">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse11" aria-expanded="false" aria-controls="collapse11">
+                            Coding seems hard, what if I get stuck all the time?
+                        </button>
+                    </h2>
+                    <div id="collapse11" class="accordion-collapse collapse" aria-labelledby="heading11" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Getting stuck is part of the process – even seasoned developers hit walls! The key is learning how to <span class="faq-keyword">debug</span> and find solutions. We've got a supportive community forum, and our courses teach you problem-solving strategies. Every bug you fix makes you a better coder and prepares you for real-world challenges!
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="heading12">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse12" aria-expanded="false" aria-controls="collapse12">
+                            How do I stay motivated when learning to code?
+                        </button>
+                    </h2>
+                    <div id="collapse12" class="accordion-collapse collapse" aria-labelledby="heading12" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Set small, achievable goals, celebrate tiny wins, and work on projects you're genuinely excited about! Share your progress with our community, and don't be afraid to take breaks. Remember why you started – maybe it's to build your dream game, an app for your friends, or even a solution for a local problem in Singapore.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="heading13">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse13" aria-expanded="false" aria-controls="collapse13">
+                            Can I really make my own games or apps with what I learn here?
+                        </button>
+                    </h2>
+                    <div id="collapse13" class="accordion-collapse collapse" aria-labelledby="heading13" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Absolutely! Our courses are designed to give you the foundational skills to build real-world projects. Once you master the basics, you'll be able to create simple games, utility apps, or even start prototyping your big ideas. The only limit is your imagination and dedication to learning!
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="heading14">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse14" aria-expanded="false" aria-controls="collapse14">
+                            What's the "best" coding language to start with for my age group?
+                        </button>
+                    </h2>
+                    <div id="collapse14" class="accordion-collapse collapse" aria-labelledby="heading14" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            There's no single "best" language, but for beginners, <span class="faq-keyword">Python</span> or <span class="faq-keyword">JavaScript</span> are fantastic choices. Python is known for its readability and versatility (AI, data science, web), while JavaScript is essential for anything on the web. We focus on JavaScript and web technologies, which are highly relevant for building interactive experiences and have a strong demand in the tech industry.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- FAQ Contact Form -->
+        <section class="faq-form-container gsap-animate d-flex flex-column align-items-center justify-content-center" style="max-width: 400px; margin: 0 auto 2.5rem auto; background: rgba(24,31,42,0.92); box-shadow: none;">
+            <div class="text-center mb-3">
+                <i class="bi bi-bug-fill glitch-glow-icon" style="font-size: 2.2rem; filter: drop-shadow(0 0 4px #00ffd0) brightness(1.05);"></i>
+            </div>
+            <h2 class="faq-form-title glassy-heading text-center highlight">Still got a glitch in your matrix?</h2>
+            <p class="faq-form-desc text-center">Send us your question, and our tech wizards will get back to you ASAP.</p>
+            <form id="faqContactForm" class="faq-form w-100">
+                <div class="mb-3">
+                    <label for="faqName" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="faqName" placeholder="Your Name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="faqEmail" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="faqEmail" placeholder="Your email for the reply" required>
+                </div>
+                <div class="mb-4">
+                    <label for="faqMessage" class="form-label">Message</label>
+                    <textarea class="form-control" id="faqMessage" rows="5" placeholder="Spill the bytes! What's on your mind?" required></textarea>
+                </div>
+                <button type="submit" class="glass-button w-100">Send Message</button>
+                <div id="faqFormSuccess" class="mt-3 text-success text-center d-none">Thank you! We'll get back to you soon 🚀</div>
+            </form>
+            <!-- Toast for validation feedback -->
+            <div class="toast-container position-fixed top-0 end-0 p-3" style="z-index: 1100;">
+              <div id="faqToast" class="toast align-items-center text-bg-dark border-0" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="d-flex">
+                  <div class="toast-body" id="faqToastMsg"></div>
+                  <button type="button" class="btn-close btn-close-white ms-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+              </div>
+            </div>
+        </section>
+        <!-- Footer -->
+        <footer class="footer py-4">
+            <div class="container">
+                <div class="d-flex justify-content-center align-items-center mb-3">
+                    <div class="col-auto">
+                        <img src="assets/sp.svg" alt="SP Logo" class="footer-logo" />
+                        <img src="assets/nachikethreddy.svg" alt="Nachiketh Logo" class="footer-logo" />
+                    </div>
+                </div>
+                <div class="row justify-content-center mb-2">
+                    <div class="col-auto">
+                        <blockquote class="footer-quote mb-0">
+                            "Coding is the tool to build your dream world — start young, build big."
+                        </blockquote>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-auto">
+                        <p class="footer-text mb-0">© Nachiketh Reddy 2025. Made for aspiring coders.</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+
+
+
+
+
+
+
+
+
+
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+      <!-- jQuery (latest) -->
+      <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-..." crossorigin="anonymous"></script>
+      <!-- Bootstrap 5.3.7 JS -->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-..." crossorigin="anonymous"></script>
+      <script src="js/navigation.js"></script>
+      <script src="js/hero.js"></script>
+      <script src="js/faq.js"></script>
+
+</body>
+</html>

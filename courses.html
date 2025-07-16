@@ -3,22 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Courses</title>
+    <title>LaunchCode Courses</title>
 
-         <link rel="shortcut icon" href="assets/terminal.png" type="image/x-icon">
+    <link rel="shortcut icon" href="assets/terminal.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Bootstrap 5.3.7 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-..." crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" xintegrity="sha384-..." crossorigin="anonymous">
     <!-- Bootstrap Icons (already present, but keep latest) -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap">
-    <link rel="stylesheet" href="css/navigation.css">
+    <!-- Google Fonts: Libre Caslon Text (for hero), Orbitron (for tags), and Montserrat (similar to SF Pro) -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Orbitron:wght@400;700&family=Montserrat:wght@300;400;500;600;700&family=Space+Mono&display=swap">
+    <!-- Added Space Mono for terminal style -->
+
     <link rel="stylesheet" href="css/courses.css">
     <link rel="stylesheet" href="css/hero.css">
+    <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/button.css">
+    <link rel="stylesheet" href="css/navigation.css">
 </head>
 <body>
-    <nav class="navbar px-4 py-3">
+  <nav class="navbar px-4 py-3">
     <div class="d-flex align-items-center hide-on-mobile">
       <a href="index.html" class="logo">
       <img src="assets/terminal.svg" alt="Logo" height="40" />
@@ -27,9 +31,9 @@
     </div>
 
     <div class="nav-links d-none d-md-flex">
-      <a href="index.html" class="nav-item">Home</a>
+      <a href="index.html" class="nav-item active">Home</a>
       <a href="FAQ.html" class="nav-item">FAQ</a>
-      <a href="courses.html" class="nav-item active">Courses</a>
+      <a href="courses.html" class="nav-item">Courses</a>
     </div>
 
     <div class="btn-sm d-none d-md-block">
@@ -44,133 +48,134 @@
         <div class="menu-line"></div>
         <div class="menu-line"></div>
       </div>
-      <a href="index.html" class="nav-item">Home</a>
+      <a href="index.html" class="nav-item active">Home</a>
       <a href="FAQ.html" class="nav-item">FAQ</a>
-      <a href="courses.html" class="nav-item active">Courses</a>
+      <a href="courses.html" class="nav-item">Courses</a>
       <a href="signup.html" class="btn btn-signup2 btn-sm">Sign Up Now!</a>
     </div>
   </div>
-
-
+    
+<div class="background-glow"></div>
   <section class="hero">
-        <p><span class="pulse-dot"></span>Ready to Build Something Amazing?</p>
-        <h1>
-            Master the <span class="highlight">Skills</span> to Build<br>
-            the <span class="highlight">Next Big Thing!</span>
-        </h1>
-        <p class="mt-3">Hey future tech innovator! 🚀 Want to create apps, websites, and games that millions will use? Our courses are designed specifically for curious minds like yours. No experience needed - just bring your creativity!</p>
-        <button class="glass-button mt-4" onclick="document.getElementById('my-section').scrollIntoView({ behavior: 'smooth' });">Start Learning Now!</button>
+    <p><span class="pulse-dot"></span>Live from the Future!</p>
+    <h1>
+      Welcome to <span class="highlight">LaunchCode Courses!</span><br>
+      Unlock Your <span class="highlight">Coding Potential</span><br>
+            and <span class="highlight">Impact the World!</span>
+    </h1>
+    <p class="mt-3">Join our Code for Change campaign! Learn front-end development skills that empower you to build amazing things and make a real difference. Perfect for aspiring innovators like you.</p>
+    <button class="glass-button mt-4" onclick="document.getElementById('videoIntro').scrollIntoView({ behavior: 'smooth' });">Watch Introduction</button>
+  </section>
+
+
+    <!-- Video Introduction Section -->
+    <section class="video-intro-section" id="videoIntro">
+        <h2>A Message From Our Founder</h2>
+        <div class="video-container">
+            <video id="introVideo" preload="auto" playsinline controls>
+                <!-- Added 'controls' attribute here -->
+                <!-- Replace with your actual video source -->
+                <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="video-overlay" id="videoOverlay">
+                <i class="fas fa-play-circle play-button"></i>
+                <p>Introduction to Our Courses</p>
+            </div>
+        </div>
     </section>
 
-
-
-
-
-
-
-    <section class="courses-section" style="padding: 2rem 0;">
+    <!-- Courses Section -->
+    <section class="courses-section" id="coursesSection">
         <div class="container" style="max-width: 100vw; overflow-x: hidden;">
             <div class="glass-container">
-                <h1 class="title">Our Courses</h1>
+                <h1 class="title">Our <span class="highlight">Courses</span></h1>
                 <p class="subtitle">Comprehensive courses to build your coding skills from scratch to advanced level</p>
 
                 <div class="row">
+                    <!-- Atomic HTML Card -->
                     <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="course-card html-card" onclick="toggleCourseDetails(this)">
-                            <i class="fab fa-html5 course-icon"></i>
-                            <h3 class="course-title">Atomic HTML <span class="hot-badge">HOT</span></h3>
+                        <div class="course-card" data-course-id="html">
+                            <i class="fab fa-html5 course-icon html-icon"></i>
+                            <h3 class="course-title">Atomic HTML</h3>
                             <p class="course-description">Build your first website from scratch! Learn HTML5 and create web pages that actually work. Perfect for complete beginners!</p>
                             <div class="course-meta">
                                 <span class="course-duration">4 weeks</span>
-                                <span class="course-level">Beginner</span>
-                                <span class="course-price">$5</span>
+                                <span class="course-level beginner-level">Beginner</span>
+                                <span class="course-price price-non-promo">$5</span>
                             </div>
-                            <div class="course-details" style="display: none;">
-                                <div class="course-modules">
-                                    <h4>Course Modules:</h4>
-                                    <ul>
-                                        <li>HTML Basics: Your First Tags!</li>
-                                        <li>Semantic HTML: Smart & Clean Code!</li>
-                                        <li>Forms & Input: Make It Interactive!</li>
-                                        <li>Media Elements: Add Some Flair!</li>
-                                        <li>HTML5 APIs: Unlock Web Superpowers!</li>
-                                        <li>Best Practices: Code Like a Pro!</li>
-                                    </ul>
-                                </div>
-                                <div class="course-projects">
-                                    <h4>What You'll Build:</h4>
-                                    <ul>
-                                        <li>Your very first personal website</li>
-                                        <li>A cool blog layout</li>
-                                        <li>An online resume</li>
-                                    </ul>
-                                </div>
-                                <button class="glass-button" onclick="openModal('html')">View Full Details</button>
-                            </div>
+                            <span class="hot-badge"><i class="fas fa-fire"></i> HOT</span>
                         </div>
                     </div>
 
+                    <!-- Dope with CSS Card -->
                     <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="course-card css-card" onclick="openModal('css')">
-                            <i class="fab fa-css3-alt course-icon"></i>
+                        <div class="course-card" data-course-id="css">
+                            <i class="fab fa-css3-alt course-icon css-icon"></i>
                             <h3 class="course-title">Dope with CSS</h3>
                             <p class="course-description">Make your websites look absolutely stunning! Learn animations, cool effects, and responsive design that works on phones!</p>
                             <div class="course-meta">
                                 <span class="course-duration">5 weeks</span>
-                                <span class="course-level">Beginner</span>
-                                <span class="course-price">$15</span>
+                                <span class="course-level intermediate-level">Intermediate</span>
+                                <span class="course-price price-non-promo">$15</span>
                             </div>
+                            <span class="hot-badge"><i class="fas fa-fire"></i> HOT</span>
                         </div>
                     </div>
 
+                    <!-- Interactive JavaScript Card -->
                     <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="course-card js-card" onclick="openModal('javascript')">
-                            <i class="fab fa-js course-icon"></i>
+                        <div class="course-card" data-course-id="javascript">
+                            <i class="fab fa-js course-icon js-icon"></i>
                             <h3 class="course-title">Interactive JavaScript</h3>
                             <p class="course-description">Create games, apps, and interactive websites! Learn JavaScript and make your ideas come to life with real coding skills.</p>
                             <div class="course-meta">
                                 <span class="course-duration">8 weeks</span>
-                                <span class="course-level">Intermediate</span>
-                                <span class="course-price"><span class="original-price">$35</span> $25 <span class="promo-badge">PROMO</span></span>
+                                <span class="course-level intermediate-level">Intermediate</span>
+                                <span class="course-price price-promo"><span class="original-price">$35</span> $25 <span class="promo-badge"><i class="fas fa-fire"></i> PROMO</span></span>
                             </div>
                         </div>
                     </div>
 
+                    <!-- UI/UX Design Card -->
                     <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="course-card uiux-card" onclick="openModal('uiux')">
-                            <i class="fas fa-palette course-icon"></i>
-                            <h3 class="course-title">UI/UX Design <span class="hot-badge">HOT</span></h3>
+                        <div class="course-card" data-course-id="uiux">
+                            <i class="fas fa-palette course-icon uiux-icon"></i>
+                            <h3 class="course-title">UI/UX Design</h3>
                             <p class="course-description">Design apps and websites that people actually love to use! Learn to create beautiful, user-friendly interfaces.</p>
                             <div class="course-meta">
                                 <span class="course-duration">12 weeks</span>
-                                <span class="course-level">Intermediate</span>
-                                <span class="course-price"><span class="original-price">$15</span> $10 <span class="promo-badge">PROMO</span></span>
+                                <span class="course-level intermediate-level">Intermediate</span>
+                                <span class="course-price price-non-promo">$15</span>
                             </div>
+                            <span class="hot-badge"><i class="fas fa-fire"></i> HOT</span>
                         </div>
                     </div>
 
+                    <!-- Easy Road with Bootstrap Card -->
                     <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="course-card bootstrap-card" onclick="openModal('bootstrap')">
-                            <i class="fab fa-bootstrap course-icon"></i>
-                            <h3 class="course-title">Easy Road with Bootstrap <span class="hot-badge">HOT</span></h3>
+                        <div class="course-card" data-course-id="bootstrap">
+                            <i class="fab fa-bootstrap course-icon bootstrap-icon"></i>
+                            <h3 class="course-title">Easy Road with Bootstrap</h3>
                             <p class="course-description">Build professional websites super fast! Learn Bootstrap and create responsive sites that look great on any device.</p>
                             <div class="course-meta">
                                 <span class="course-duration">6 weeks</span>
-                                <span class="course-level">Beginner</span>
-                                <span class="course-price">$5</span>
+                                <span class="course-level beginner-level">Beginner</span>
+                                <span class="course-price price-non-promo">$5</span>
                             </div>
                         </div>
                     </div>
 
+                    <!-- React Apps Card -->
                     <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="course-card react-card" onclick="openModal('react')">
-                            <i class="fab fa-react course-icon"></i>
+                        <div class="course-card" data-course-id="react">
+                            <i class="fab fa-react course-icon react-icon"></i>
                             <h3 class="course-title">React Apps</h3>
                             <p class="course-description">Build the next Instagram or TikTok! Learn React and create dynamic apps that millions of people could use.</p>
                             <div class="course-meta">
                                 <span class="course-duration">10 weeks</span>
-                                <span class="course-level">Advanced</span>
-                                <span class="course-price">$30</span>
+                                <span class="course-level advanced-level">Advanced</span>
+                                <span class="course-price price-promo"><span class="original-price">$30</span> $10 <span class="promo-badge"><i class="fas fa-fire"></i> PROMO</span></span>
                             </div>
                         </div>
                     </div>
@@ -179,19 +184,64 @@
         </div>
     </section>
 
+    <!-- Course Details Modal -->
+    <div class="course-modal" id="courseModal">
+        <div class="modal-content-wrapper">
+            <button class="modal-close-button" id="modalCloseButton">&times;</button>
+            <h2 class="modal-course-title" id="modalCourseTitle"></h2>
+            <p class="modal-course-description" id="modalCourseDescription"></p>
+            <div class="modal-course-details-grid">
+                <div class="course-modules-section">
+                    <h4>Course Modules:</h4>
+                    <ul id="modalCourseModules">
+                        <!-- Modules will be injected here -->
+                    </ul>
+                </div>
+                <div class="course-projects-section">
+                    <h4>What You'll Build:</h4>
+                    <ul id="modalCourseProjects">
+                        <!-- Projects will be injected here -->
+                    </ul>
+                </div>
+            </div>
+            <p class="text-center text-muted mt-4">All our courses are taught via engaging video tutorials, interactive coding challenges, and real-world projects, designed to make learning fun and effective for a 16-year-old.</p>
+            <a href="signup.html" class="modal-signup-button mt-4">Sign Up Now!</a>
+        </div>
+    </div>
 
+    <!-- Footer Section -->
+    <footer class="footer-section">
+        <div class="container">
+            <div class="footer-logo-container">
+                <img src="assets/sp.svg" alt="SP Logo">
+                <span>X</span>
+                <img src="assets/nachikethreddy.svg" alt="Nachiketh Reddy Logo">
+            </div>
+            <div class="footer-coding-interface">
+              <span class="footer-terminal-prompt">NachikethReddy&nbsp;$~</span>
+              <span class="footer-terminal-quote">The only way to do great work is to love what you do.</span>
+            </div>
+            <p class="footer-small-text"># Code for change</p>
+            <p class="footer-contact-info">Singapore | +65 88983832</p>
+            <div class="social-icons-container d-flex justify-content-center gap-3 mt-3">
+              <a href="https://linkedin.com/in/ynr-nachiketh-reddy" target="_blank" class="social-icon-btn"><i class="bi bi-linkedin fs-4"></i></a>
+              <a href="https://github.com/nachikethreddy" target="_blank" class="social-icon-btn"><i class="bi bi-github fs-4"></i></a>
+              <a href="mailto:y.nachiketh.reddy@gmail.com" class="social-icon-btn"><i class="bi bi-envelope-fill fs-4"></i></a>
+            </div>
+            <p class="footer-copyright">Made with ❤️, Copyright &copy; Nachiketh Reddy</p>
+        </div>
+    </footer>
 
-
-
-
+    <!-- GSAP and Bootstrap JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-  <!-- jQuery (latest) -->
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-..." crossorigin="anonymous"></script>
-  <!-- Bootstrap 5.3.7 JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-..." crossorigin="anonymous"></script>
-  <script src="js/navigation.js"></script>
-  <script src="js/hero.js"></script>
-  <script src="js/courses.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" xintegrity="sha384-..." crossorigin="anonymous"></script>
+
+    <script src="js/courses.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/courses.js"></script>
+    <script src="js/footer.js"></script>
+    <script src="js/button.js"></script>
+
 </body>
 </html>

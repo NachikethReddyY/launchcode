@@ -1,56 +1,560 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.cdnfonts.com/css/sf-pro-display');
 /* ===== GLOBAL STYLES ===== */
 body{
-    font-family: 'sf-pro-display', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    background: linear-gradient(to bottom right, #000000, #1a1a1a);
-    color: white;
-    min-height: 100vh;
-    min-height: 100dvh; /* Dynamic viewport height for mobile */
-    overflow-x: hidden;
-    position: relative;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    max-width: 100vw;
-    box-sizing: border-box;
+  font-family: 'sf-pro-display', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background: linear-gradient(to bottom right, #000000, #1a1a1a);
+  color: white;
+  min-height: 100vh;
+  min-height: 100dvh; /* Dynamic viewport height for mobile */
+  overflow-x: hidden;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-width: 100vw;
+  box-sizing: border-box;
 }
 
 html {
-    overflow-x: hidden;
-    width: 100%;
-    max-width: 100vw;
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
 }
 
 html, body {
-  overflow-x: hidden !important;
-  overflow-y: auto !important;
-  width: 100vw;
-  max-width: 100vw;
-  height: 100%;
+overflow-x: hidden !important;
+overflow-y: auto !important;
+width: 100vw;
+max-width: 100vw;
+height: 100%;
 }
 
 /* Universal fix for horizontal scrolling */
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body, html {
-    overflow-x: hidden;
-    width: 100%;
-    max-width: 100vw;
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
 }
 
 /* Ensure all containers respect viewport width */
 .container, .row, .col-*, [class*="col-"] {
-    max-width: 100vw;
-    overflow-x: hidden;
+  max-width: 100vw;
+  overflow-x: hidden;
 }
 
 /* Improve alignment and spacing for sections and elements */
 section, .container {
-  margin-bottom: 2.5rem;
+margin-bottom: 2.5rem;
 }
 @media (max-width: 600px) {
-  section, .container {
-    margin-bottom: 1.2rem;
-  }
+section, .container {
+  margin-bottom: 1.2rem;
 }
+}
+
+        Custom Scrollbar
+        body::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        body::-webkit-scrollbar-track {
+            background: #1a1a1a;
+        }
+
+        body::-webkit-scrollbar-thumb {
+            background-color: #4a4a4a;
+            border-radius: 10px;
+            border: 2px solid #1a1a1a;
+        }
+
+       
+
+        
+        /* Video Introduction Section */
+        .video-intro-section {
+            padding: 6rem 2rem;
+            /* background: #0d0d0d; */
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .video-intro-section h2 {
+            font-family: 'Libre Caslon Text', serif;
+            font-size: 2.8rem;
+            color: #e0e0e0;
+            margin-bottom: 2rem;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .video-container video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #e0e0e0;
+            transition: opacity 0.3s ease;
+            opacity: 1;
+            cursor: pointer;
+        }
+
+        .video-overlay.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .play-button {
+            font-size: 4rem;
+            color: #00bcd4; /* Cyan Blue */
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .play-button:hover {
+            transform: scale(1.1);
+        }
+
+        .video-overlay p {
+            font-size: 1.4rem;
+            margin-top: 1rem;
+            font-weight: 500;
+        }
+
+        /* Courses Section */
+        .courses-section {
+            padding: 6rem 2rem;
+            /* background: #0d0d0d; */
+        }
+
+        .courses-section .title {
+            font-family: 'Libre Caslon Text', serif;
+            font-size: 3rem;
+            color: #e0e0e0; /* Default color for the title */
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .courses-section .title .highlight {
+            font-style: italic;
+            font-family: 'Libre Caslon Text', serif;
+            font-weight: 600;
+            background: linear-gradient(90deg, #F6FF00, #EC4899, #A855F7, #6366F1);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .courses-section .subtitle {
+            font-size: 1.2rem;
+            color: #b0b0b0;
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .glass-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .course-card {
+            background: rgba(255, 255, 255, 0.08); /* Translucent background */
+            backdrop-filter: blur(15px); /* Glass blur */
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            position: relative; /* Needed for absolute positioning of icon */
+            transition: all 0.3s ease-in-out;
+            cursor: pointer;
+            height: 100%; /* Ensure cards have equal height */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37); /* Initial shadow */
+        }
+
+        .course-card:hover {
+            transform: translateY(-5px); /* Only lift, no rotation */
+            box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.5); /* Enhanced shadow, no faint blue */
+        }
+
+        .course-icon {
+            position: relative; /* Position as a badge */
+            top: 10px; /* Bring it up to be on top of the card edge */
+            left: 50%;
+            /* margin-bottom: 20px; */
+            transform: translateX(-50%); /* Center X */
+            font-size: 4.5rem; /* Increased size */
+            color: #b0b0b0; /* Original color, subtle */
+            transition: all 0.3s ease; /* Smooth transition for hover */
+            /* Removed background, padding, border-radius to remove circle */
+        }
+
+        /* Specific icon colors */
+        .html-icon { color: #FF8C00; } /* Orange */
+        .css-icon { color: #1E90FF; } /* DodgerBlue */
+        .js-icon { color: #FFFF00; } /* Yellow */
+        .uiux-icon { color: #FF00FF; } /* Magenta */
+        .bootstrap-icon { color: #7952B3; } /* Bootstrap Purple */
+        .react-icon { color: #61DAFB; } /* React Blue-Green */
+
+
+        .course-card:hover .course-icon {
+            transform: translateX(-50%) rotate(22deg); /* Icon turn effect */
+            text-shadow: 0 0 15px currentColor; /* Neon glow using current color */
+        }
+
+        .course-title {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #e0e0e0; /* Default color */
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding-top: 3rem; /* Increased padding to account for icon badge + its half height */
+            transition: all 0.3s ease; /* Ensure smooth transition for title */
+        }
+
+        /* Neon effect for course titles on hover */
+        .course-card:hover .course-title {
+            color: #e0e0e0; /* Keep the original text color (SF Pro white) */
+            -webkit-text-stroke: 1px currentColor; /* Outline effect */
+            text-stroke: 1px currentColor; /* Standard property */
+            text-shadow: 0 0 5px currentColor, 0 0 10px currentColor, 0 0 20px currentColor; /* Neon glow */
+            -webkit-text-fill-color: initial; /* Ensure text is filled, not transparent */
+            text-fill-color: initial; /* Standard property */
+        }
+
+
+        .course-description {
+            font-size: 1rem;
+            color: #b0b0b0;
+            margin-bottom: 1.5rem;
+            flex-grow: 1; /* Allows description to take available space */
+        }
+
+        .course-meta {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 1rem;
+        }
+
+        .course-meta span {
+            font-size: 0.9rem;
+            /* color: #909090; */
+            margin: 0.5rem;
+            font-family: 'Orbitron', sans-serif; /* Orbitron for small tags */
+        }
+
+        /* Level Colors */
+        .beginner-level { color: #4CAF50; } /* Green */
+        .intermediate-level { color: #FFC107; } /* Yellow */
+        .advanced-level { color: #F44336; } /* Red */
+
+        .course-price {
+            font-size: 1.2rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            justify-content: center; /* Center price and promo badge */
+        }
+
+        /* Amount Colors */
+        .price-non-promo { color: #8BC34A; } /* Different Green */
+        .price-promo { color: #E91E63; } /* Different Red */
+
+
+        .course-price .original-price {
+            text-decoration: line-through;
+            color: #707070;
+            font-size: 0.9rem;
+            font-weight: 400;
+        }
+
+        /* Badges */
+        .hot-badge {
+            position: absolute; /* Position to top-right tip */
+            top: -10px;
+            right: -10px;
+            display: inline-flex;
+            align-items: center;
+            background: linear-gradient(45deg, #ff416c, #ff4b2b); /* Fiery gradient (kept as is for "hot" effect) */
+            color: white;
+            padding: 0.3rem 0.7rem;
+            border-radius: 15px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            box-shadow: 0 2px 10px rgba(255, 65, 108, 0.4);
+            font-family: 'Orbitron', sans-serif;
+            z-index: 20; /* Ensure it's on top */
+        }
+
+        .promo-badge {
+            display: inline-flex;
+            align-items: center;
+            background: linear-gradient(45deg, #ff416c, #ff4b2b); /* Fiery gradient (kept as is for "hot" effect) */
+            color: white; /* Promo color white */
+            padding: 0.3rem 0.7rem;
+            border-radius: 15px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-left: 0.5rem; /* Promo badge specifically next to price */
+            box-shadow: 0 2px 10px rgba(255, 65, 108, 0.4);
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .hot-badge i, .promo-badge i {
+            margin-right: 5px;
+            font-size: 0.8em;
+        }
+
+        /* Modal Styles */
+        .course-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7); /* Darker overlay */
+            backdrop-filter: blur(20px); /* Stronger blur for background */
+            -webkit-backdrop-filter: blur(20px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1060; /* Above mobile menu */
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .course-modal.show {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .modal-content-wrapper {
+            background: rgba(255, 255, 255, 0.12); /* Glassy modal content */
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 25px;
+            padding: 3rem;
+            max-width: 900px;
+            width: 90%;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.6); /* Gamer-like shadow */
+            position: relative;
+            transform: scale(0.8); /* Initial scale for GSAP animation */
+            opacity: 0;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+            color: #e0e0e0;
+            max-height: 90vh; /* Limit height for scrollability */
+            overflow-y: auto; /* Enable scrolling for content */
+        }
+
+        .course-modal.show .modal-content-wrapper {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        .modal-close-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: #b0b0b0;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .modal-close-button:hover {
+            color: #00bcd4; /* Cyan Blue */
+        }
+
+        .modal-course-title {
+            font-family: 'Libre Caslon Text', serif;
+            font-size: 2.5rem;
+            color: #00bcd4; /* Cyan Blue */
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .modal-course-description {
+            font-size: 1.1rem;
+            color: #c0c0c0;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .modal-course-details-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .modal-course-details-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .modal-course-details-grid h4 {
+            font-size: 1.4rem;
+            color: #00bcd4; /* Cyan Blue */
+            margin-bottom: 1rem;
+        }
+
+        .modal-course-details-grid ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .modal-course-details-grid ul li {
+            font-size: 1rem;
+            color: #e0e0e0;
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .modal-course-details-grid ul li::before {
+            content: '•';
+            color: #00bcd4; /* Cyan Blue */
+            font-size: 1.2em;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        /* Modal Highlight */
+        .modal-highlight {
+            background: linear-gradient(90deg, rgba(0,0,0,0.8), rgba(0,0,0,0.6)); /* Black gradient background */
+            color: #FFFF00; /* Yellow text */
+            padding: 0.2em 0.5em;
+            border-radius: 5px;
+            font-weight: 600;
+        }
+
+
+        .modal-signup-button {
+            width: 100%;
+            background-color: #00bcd4; /* Cyan Blue */
+            color: #0d0d0d;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none; /* For the anchor tag */
+            display: block; /* Make it a block element */
+            text-align: center;
+        }
+
+        .modal-signup-button:hover {
+            background-color: #00acc1; /* Darker Cyan Blue for hover */
+            box-shadow: 0 0 20px rgba(0, 188, 212, 0.6); /* Cyan Blue shadow */
+            transform: translateY(-3px);
+        }
+
+
+        /* Responsive adjustments */
+        @media (max-width: 767.98px) {
+            .navbar {
+                padding: 1rem;
+            }
+            .hide-on-mobile {
+                display: none !important;
+            }
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            .hero p {
+                font-size: 1rem;
+            }
+            .courses-section .title {
+                font-size: 2.2rem;
+            }
+            .courses-section .subtitle {
+                font-size: 1rem;
+            }
+            .course-card {
+                padding: 1.5rem;
+            }
+            .course-icon {
+                font-size: 3.5rem; /* Adjusted for mobile */
+                top: -20px; /* Adjusted for mobile */
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            .course-title {
+                font-size: 1.5rem;
+                padding-top: 0rem; /* Adjusted for mobile icon */
+            }
+            .course-description {
+                font-size: 0.9rem;
+            }
+            .course-meta span {
+                font-size: 0.8rem;
+            }
+            .course-price {
+                font-size: 1.1rem;
+            }
+            .modal-content-wrapper {
+                padding: 2rem;
+                width: 95%;
+            }
+            .modal-course-title {
+                font-size: 2rem;
+            }
+            .modal-course-description {
+                font-size: 1rem;
+            }
+            .modal-course-details-grid {
+                grid-template-columns: 1fr;
+            }
+            .modal-signup-button {
+                font-size: 1rem;
+                padding: 0.8rem 1.5rem;
+            }
+        }
