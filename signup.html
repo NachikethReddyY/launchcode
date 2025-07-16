@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Launch Code - Course Signup</title>
+       <link rel="stylesheet" href="bootstrap-5.3.7-dist/css/bootstrap.min.css">
+    <script src="bootstrap-5.3.7-dist/js/bootstrap.min.js"></script>
+     <!-- JQuery to support Bootstrap Functions -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+            <link rel="shortcut icon" href="assets/terminal.png" type="image/x-icon">
+        <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/signup.css">
+
+
+</head>
+<body>
+    <div class="background-glow"></div>
+
+    <!-- Top Back to Home Button (outside form-container) -->
+    <a href="index.html" id="topBackToHome" class="top-back-to-home">
+        <i class="fas fa-arrow-left"></i> Back to Home
+    </a>
+
+    <!-- Signup Form -->
+    <div id="signupForm" class="form-container">
+        <div class="form-inner">
+            <h2 class="form-title">Join Launch Code!</h2>
+
+            <div class="step-timeline">
+                <div class="step-timeline-line"></div>
+                <div class="step-timeline-dot" data-step="1">1</div>
+                <div class="step-timeline-dot" data-step="2">2</div>
+                <div class="step-timeline-dot" data-step="3">3</div>
+            </div>
+
+            <form id="courseSignupForm" novalidate>
+                <!-- Page 1: Personal Info & Course -->
+                <div id="page1" class="form-page active">
+                    <div class="mb-3">
+                        <label for="yourName" class="form-label">Your Name:</label>
+                        <input type="text" class="form-control" id="yourName" placeholder="Enter your full name" required>
+                        <div class="invalid-feedback">Please enter your name.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="yourEmail" class="form-label">Your Email:</label>
+                        <input type="email" class="form-control" id="yourEmail" placeholder="name@example.com" required>
+                        <div class="invalid-feedback">Please enter a valid email address.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="interestedCourse" class="form-label">Interested Course:</label>
+                        <select class="form-select" id="interestedCourse" required>
+                            <option value="" disabled selected>Select a course</option>
+                            <option value="atomic-html">Atomic HTML</option>
+                            <option value="dope-with-css">Dope With CSS</option>
+                            <option value="interactivity-with-js">Interactivity with JS</option>
+                            <option value="easy-road-with-bootstrap">Easy road with Bootstrap</option>
+                            <option value="react-apps">React Apps</option>
+                            <option value="ui-ux">UI/UX</option>
+                        </select>
+                        <div class="invalid-feedback">Please select an interested course.</div>
+                    </div>
+                    <div class="mb-3 study-period-wrapper">
+                        <label for="studyPeriodSlider" class="form-label">Preferred Study Period:</label>
+                        <input type="range" class="form-range" id="studyPeriodSlider" min="1" max="12" value="3">
+                        <div class="study-period-display text-center">
+                            <span id="studyPeriodValue">3 months</span>
+                        </div>
+                    </div>
+                    <div class="mb-4 platform-checkbox-group">
+                        <label class="form-label d-block">Which platforms will you be using the course on?</label>
+                        <div class="d-flex flex-wrap">
+                            <div class="form-check form-check-inline me-4 mb-2">
+                                <input class="form-check-input" type="checkbox" id="platformPhone" value="phone">
+                                <label class="form-check-label" for="platformPhone">Phone</label>
+                            </div>
+                            <div class="form-check form-check-inline me-4 mb-2">
+                                <input class="form-check-input" type="checkbox" id="platformComputer" value="computer">
+                                <label class="form-check-label" for="platformComputer">Computer</label>
+                            </div>
+                            <div class="form-check form-check-inline mb-2">
+                                <input class="form-check-input" type="checkbox" id="platformTablet" value="tablet">
+                                <label class="form-check-label" for="platformTablet">Tablet</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-end">
+                        <button type="button" class="popping-blue-button" id="nextPage1">Next <i class="fas fa-arrow-right ms-2"></i></button>
+                    </div>
+                </div>
+
+                <!-- Page 2: Experience & Goals -->
+                <div id="page2" class="form-page">
+                    <div class="mb-3">
+                        <label class="form-label d-block">Current Experience Level:</label>
+                        <div class="experience-bubbles" id="experienceBubbles">
+                            <div class="experience-bubble"><input class="form-check-input" type="radio" name="experienceLevel" id="levelBeginner" value="beginner" required><label for="levelBeginner">Beginner</label></div>
+                            <div class="experience-bubble"><input class="form-check-input" type="radio" name="experienceLevel" id="levelIntermediate" value="intermediate"><label for="levelIntermediate">Intermediate</label></div>
+                            <div class="experience-bubble"><input class="form-check-input" type="radio" name="experienceLevel" id="levelAdvanced" value="advanced"><label for="levelAdvanced">Advanced</label></div>
+                        </div>
+                        <div class="invalid-feedback radio-feedback" id="experienceLevelFeedback">Please select your experience level.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="goalsMotivation" class="form-label">Goals and Motivation:</label>
+                        <textarea class="form-control" id="goalsMotivation" rows="4" maxlength="250" placeholder="Tell us about your goals and what motivates you..."></textarea>
+                        <div class="char-count" id="goalsMotivationCharCount">0/250 characters</div>
+                    </div>
+                    <div class="mb-4">
+                        <label class="form-label d-block">Which technologies are you most excited about? (Check all that apply)</label>
+                        <div class="tech-bubbles" id="techBubbles">
+                            <div class="tech-bubble"><input class="form-check-input" type="checkbox" id="techHTML5" value="HTML5"><label for="techHTML5">HTML5</label></div>
+                            <div class="tech-bubble"><input class="form-check-input" type="checkbox" id="techCSS3" value="CSS3"><label for="techCSS3">CSS3</label></div>
+                            <div class="tech-bubble"><input class="form-check-input" type="checkbox" id="techJavaScript" value="JavaScript"><label for="techJavaScript">JavaScript</label></div>
+                            <div class="tech-bubble"><input class="form-check-input" type="checkbox" id="techReact" value="React"><label for="techReact">React</label></div>
+                            <div class="tech-bubble"><input class="form-check-input" type="checkbox" id="techNodejs" value="Node.js"><label for="techNodejs">Node.js</label></div>
+                            <div class="tech-bubble"><input class="form-check-input" type="checkbox" id="techPython" value="Python"><label for="techPython">Python</label></div>
+                            <div class="tech-bubble"><input class="form-check-input" type="checkbox" id="techJava" value="Java"><label for="techJava">Java</label></div>
+                            <div class="tech-bubble"><input class="form-check-input" type="checkbox" id="techPHP" value="PHP"><label for="techPHP">PHP</label></div>
+                            <div class="tech-bubble"><input class="form-check-input" type="checkbox" id="techNodejs" value="Node.js"><label for="techNodejs">Node.js</label></div>
+                            <div class="tech-bubble"><input class="form-check-input" type="checkbox" id="techPython" value="Python"><label for="techPython">Python</label></div>
+                            <div class="tech-bubble"><input class="form-check-input" type="checkbox" id="techJava" value="Java"><label for="techJava">Java</label></div>
+                            <div class="tech-bubble"><input class="form-check-input" type="checkbox" id="techPHP" value="PHP"><label for="techPHP">PHP</label></div>
+                            <div class="tech-bubble"><input class="form-check-input" type="checkbox" id="techRuby" value="Ruby"><label for="techRuby">Ruby</label></div>
+                            <div class="tech-bubble"><input class="form-check-input" type="checkbox" id="techGo" value="Go"><label for="techGo">Go</label></div>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <button type="button" class="popping-blue-button" id="prevPage2"><i class="fas fa-arrow-left me-2"></i> Previous</button>
+                        <button type="button" class="popping-blue-button" id="nextPage2">Next <i class="fas fa-arrow-right ms-2"></i></button>
+                    </div>
+                </div>
+
+                <!-- Page 3: Permissions & Comments -->
+                <div id="page3" class="form-page">
+                    <div class="mb-4 form-check">
+                        <input type="checkbox" class="form-check-input" id="contactPermission">
+                        <label class="form-check-label" for="contactPermission">Yes, I give permission to be contacted when the product is ready.</label>
+                    </div>
+                    <div class="mb-4">
+                        <label for="additionalComments" class="form-label">Additional Comments:</label>
+                        <textarea class="form-control" id="additionalComments" rows="3" placeholder="Any other thoughts or questions?"></textarea>
+                    </div>
+                    <div class="d-grid gap-2">
+                        <button type="button" class="popping-blue-button" id="prevPage3"><i class="fas fa-arrow-left me-2"></i> Previous</button>
+                        <button type="submit" class="popping-blue-button">Sign Up Now!</button>
+                    </div>
+                </div>
+
+                <!-- Pagination -->
+                <nav aria-label="Page navigation" class="mt-4">
+                    <ul class="pagination justify-content-center custom-pagination">
+                        <li class="page-item" data-page="1"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item" data-page="2"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item" data-page="3"><a class="page-link" href="#">3</a></li>
+                    </ul>
+                </nav>
+            </form>
+        </div>
+    </div>
+
+    <!-- Success Page -->
+    <div id="successPage" class="success-container">
+        <div class="form-inner">
+            <div class="confetti-container"></div>
+            <!-- Remove the check icon from the success modal -->
+            <!-- <i class="fas fa-check-circle success-icon neon-glow"></i> -->
+            <h2 class="success-title neon-success">Success!</h2>
+            <p class="success-message">
+                Thank you for signing up for Launch Code courses!
+                <br>
+                We've received your application and will send a confirmation email with next steps and updates to your inbox shortly.
+                <br>
+                Get ready to launch your coding journey!
+            </p>
+            <a href="index.html" id="backToHomeButton" class="popping-blue-button">
+                <i class="fas fa-arrow-left me-2"></i> Return to Home
+            </a>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="customToast" class="custom-toast" role="alert" aria-live="polite" aria-atomic="true">
+        <div class="toast-header">
+            <img src="assets/me.png" alt="Nachiketh Reddy">
+            <strong class="me-auto" id="toastTitle">Nachiketh Reddy</strong>
+            <small id="toastTime">just now</small>
+            <button type="button" class="close-toast" aria-label="Close">&times;</button>
+        </div>
+        <div class="toast-body" id="toastBody">
+            I will contact you over email soon—look out for it!<br>
+            Thank you for signing up. Hope we can change the world together!
+        </div>
+    </div>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- GSAP CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="js/signup.js"></script>
+</body>
+</html>

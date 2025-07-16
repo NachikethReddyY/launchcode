@@ -1,0 +1,5 @@
+<svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="250" cy="256" r="250" fill="white"/>
+    <text x="90" y="350" font-family="Arial" fill="#f6323e" font-size="260" font-weight="bold">S</text>
+    <text x="250" y="350" font-family="Arial" fill="#f6323e" font-size="260" font-weight="bold">P</text>
+</svg>

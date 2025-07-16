@@ -1,0 +1,56 @@
+/* ===== GLOBAL STYLES ===== */
+body{
+    font-family: 'sf-pro-display', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background: linear-gradient(to bottom right, #000000, #1a1a1a);
+    color: white;
+    min-height: 100vh;
+    min-height: 100dvh; /* Dynamic viewport height for mobile */
+    overflow-x: hidden;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    max-width: 100vw;
+    box-sizing: border-box;
+}
+
+html {
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+}
+
+html, body {
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+  width: 100vw;
+  max-width: 100vw;
+  height: 100%;
+}
+
+/* Universal fix for horizontal scrolling */
+* {
+    box-sizing: border-box;
+}
+
+body, html {
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+}
+
+/* Ensure all containers respect viewport width */
+.container, .row, .col-*, [class*="col-"] {
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+
+/* Improve alignment and spacing for sections and elements */
+section, .container {
+  margin-bottom: 2.5rem;
+}
+@media (max-width: 600px) {
+  section, .container {
+    margin-bottom: 1.2rem;
+  }
+}

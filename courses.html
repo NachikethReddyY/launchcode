@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses</title>
+
+         <link rel="shortcut icon" href="assets/terminal.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Bootstrap 5.3.7 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-..." crossorigin="anonymous">
+    <!-- Bootstrap Icons (already present, but keep latest) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap">
+    <link rel="stylesheet" href="css/navigation.css">
+    <link rel="stylesheet" href="css/courses.css">
+    <link rel="stylesheet" href="css/hero.css">
+    <link rel="stylesheet" href="css/button.css">
+</head>
+<body>
+    <nav class="navbar px-4 py-3">
+    <div class="d-flex align-items-center hide-on-mobile">
+      <a href="index.html" class="logo">
+      <img src="assets/terminal.svg" alt="Logo" height="40" />
+      <span class="logo-title">LaunchCode!</span>
+      </a>
+    </div>
+
+    <div class="nav-links d-none d-md-flex">
+      <a href="index.html" class="nav-item">Home</a>
+      <a href="FAQ.html" class="nav-item">FAQ</a>
+      <a href="courses.html" class="nav-item active">Courses</a>
+    </div>
+
+    <div class="btn-sm d-none d-md-block">
+      <a href="signup.html" class="btn btn-signup btn-sm">Sign Up Now!</a>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="d-md-none menu-container">
+    <div class="glass-cont" id="glassCard">
+      <div class="menu-icon" id="menuBtn">
+        <div class="menu-line"></div>
+        <div class="menu-line"></div>
+      </div>
+      <a href="index.html" class="nav-item">Home</a>
+      <a href="FAQ.html" class="nav-item">FAQ</a>
+      <a href="courses.html" class="nav-item active">Courses</a>
+      <a href="signup.html" class="btn btn-signup2 btn-sm">Sign Up Now!</a>
+    </div>
+  </div>
+
+
+  <section class="hero">
+        <p><span class="pulse-dot"></span>Ready to Build Something Amazing?</p>
+        <h1>
+            Master the <span class="highlight">Skills</span> to Build<br>
+            the <span class="highlight">Next Big Thing!</span>
+        </h1>
+        <p class="mt-3">Hey future tech innovator! 🚀 Want to create apps, websites, and games that millions will use? Our courses are designed specifically for curious minds like yours. No experience needed - just bring your creativity!</p>
+        <button class="glass-button mt-4" onclick="document.getElementById('my-section').scrollIntoView({ behavior: 'smooth' });">Start Learning Now!</button>
+    </section>
+
+
+
+
+
+
+
+    <section class="courses-section" style="padding: 2rem 0;">
+        <div class="container" style="max-width: 100vw; overflow-x: hidden;">
+            <div class="glass-container">
+                <h1 class="title">Our Courses</h1>
+                <p class="subtitle">Comprehensive courses to build your coding skills from scratch to advanced level</p>
+
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="course-card html-card" onclick="toggleCourseDetails(this)">
+                            <i class="fab fa-html5 course-icon"></i>
+                            <h3 class="course-title">Atomic HTML <span class="hot-badge">HOT</span></h3>
+                            <p class="course-description">Build your first website from scratch! Learn HTML5 and create web pages that actually work. Perfect for complete beginners!</p>
+                            <div class="course-meta">
+                                <span class="course-duration">4 weeks</span>
+                                <span class="course-level">Beginner</span>
+                                <span class="course-price">$5</span>
+                            </div>
+                            <div class="course-details" style="display: none;">
+                                <div class="course-modules">
+                                    <h4>Course Modules:</h4>
+                                    <ul>
+                                        <li>HTML Basics: Your First Tags!</li>
+                                        <li>Semantic HTML: Smart & Clean Code!</li>
+                                        <li>Forms & Input: Make It Interactive!</li>
+                                        <li>Media Elements: Add Some Flair!</li>
+                                        <li>HTML5 APIs: Unlock Web Superpowers!</li>
+                                        <li>Best Practices: Code Like a Pro!</li>
+                                    </ul>
+                                </div>
+                                <div class="course-projects">
+                                    <h4>What You'll Build:</h4>
+                                    <ul>
+                                        <li>Your very first personal website</li>
+                                        <li>A cool blog layout</li>
+                                        <li>An online resume</li>
+                                    </ul>
+                                </div>
+                                <button class="glass-button" onclick="openModal('html')">View Full Details</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="course-card css-card" onclick="openModal('css')">
+                            <i class="fab fa-css3-alt course-icon"></i>
+                            <h3 class="course-title">Dope with CSS</h3>
+                            <p class="course-description">Make your websites look absolutely stunning! Learn animations, cool effects, and responsive design that works on phones!</p>
+                            <div class="course-meta">
+                                <span class="course-duration">5 weeks</span>
+                                <span class="course-level">Beginner</span>
+                                <span class="course-price">$15</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="course-card js-card" onclick="openModal('javascript')">
+                            <i class="fab fa-js course-icon"></i>
+                            <h3 class="course-title">Interactive JavaScript</h3>
+                            <p class="course-description">Create games, apps, and interactive websites! Learn JavaScript and make your ideas come to life with real coding skills.</p>
+                            <div class="course-meta">
+                                <span class="course-duration">8 weeks</span>
+                                <span class="course-level">Intermediate</span>
+                                <span class="course-price"><span class="original-price">$35</span> $25 <span class="promo-badge">PROMO</span></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="course-card uiux-card" onclick="openModal('uiux')">
+                            <i class="fas fa-palette course-icon"></i>
+                            <h3 class="course-title">UI/UX Design <span class="hot-badge">HOT</span></h3>
+                            <p class="course-description">Design apps and websites that people actually love to use! Learn to create beautiful, user-friendly interfaces.</p>
+                            <div class="course-meta">
+                                <span class="course-duration">12 weeks</span>
+                                <span class="course-level">Intermediate</span>
+                                <span class="course-price"><span class="original-price">$15</span> $10 <span class="promo-badge">PROMO</span></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="course-card bootstrap-card" onclick="openModal('bootstrap')">
+                            <i class="fab fa-bootstrap course-icon"></i>
+                            <h3 class="course-title">Easy Road with Bootstrap <span class="hot-badge">HOT</span></h3>
+                            <p class="course-description">Build professional websites super fast! Learn Bootstrap and create responsive sites that look great on any device.</p>
+                            <div class="course-meta">
+                                <span class="course-duration">6 weeks</span>
+                                <span class="course-level">Beginner</span>
+                                <span class="course-price">$5</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="course-card react-card" onclick="openModal('react')">
+                            <i class="fab fa-react course-icon"></i>
+                            <h3 class="course-title">React Apps</h3>
+                            <p class="course-description">Build the next Instagram or TikTok! Learn React and create dynamic apps that millions of people could use.</p>
+                            <div class="course-meta">
+                                <span class="course-duration">10 weeks</span>
+                                <span class="course-level">Advanced</span>
+                                <span class="course-price">$30</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <!-- jQuery (latest) -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-..." crossorigin="anonymous"></script>
+  <!-- Bootstrap 5.3.7 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-..." crossorigin="anonymous"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/hero.js"></script>
+  <script src="js/courses.js"></script>
+</body>
+</html>

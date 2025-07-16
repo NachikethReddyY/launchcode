@@ -1,0 +1,9 @@
+<svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="250" cy="256" r="250" fill="#5271FF"/>
+    <circle cx="250" cy="256" r="200" fill="#5271FF" stroke="white" stroke-width="20"/>
+    <line x1="145" y1="90" x2="145" y2="415" stroke="white" stroke-width="25" stroke-linecap="round"/>
+    <line x1="146" y1="91" x2="359" y2="411" stroke="white" stroke-width="30" stroke-linecap="round"/>
+    <line x1="359" y1="91" x2="359" y2="415" stroke="white" stroke-width="25" stroke-linecap="round"/>
+    <text x="70" y="275" font-family="Segoe UI" fill="#FFDE59" font-size="90" font-weight="bold">Y</text>
+    <text x="372" y="275" font-family="Segoe UI" fill="#FFDE59" font-size="90" font-weight="bold">R</text>
+</svg>

@@ -1,0 +1,125 @@
+.glass-button {
+            position: relative;
+            overflow: hidden; /* Hide overflowing pseudo-elements */
+            /* --- Button Background: Translucent Blue (Light Mode) --- */
+            background-color: rgba(59, 130, 246, 0.4); /* Notion-like blue */
+            color: #e2e8f0; /* Text color for button */
+            font-weight: 600;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border for definition */
+            cursor: pointer;
+            box-shadow:
+                0 4px 8px -1px rgba(0, 0, 0, 0.3), /* Deeper shadow for 3D effect on dark background */
+                0 2px 4px -2px rgba(0, 0, 0, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3), /* Top light highlight for 3D */
+                inset 0 -1px 0 rgba(0, 0, 0, 0.2); /* Bottom dark shadow for 3D */
+            transition:
+                background-color 0.3s ease-out,
+                box-shadow 0.3s ease-out; /* Smooth transitions for hover/click (transform handled by GSAP) */
+            -webkit-backdrop-filter: blur(5px); /* Translucency effect */
+            backdrop-filter: blur(5px);
+            outline: none; /* Remove default focus outline */
+            text-decoration: none; /* Remove underline for links */
+        }
+.glass-button:focus-visible {
+                box-shadow:
+                    0 0 0 2px rgba(96, 165, 250, 0.75), /* Lighter blue for dark mode focus */
+                    0 4px 8px -1px rgba(0, 0, 0, 0.5),
+                    0 2px 4px -2px rgba(0, 0, 0, 0.4),
+                    inset 0 1px 0 rgba(255, 255, 255, 0.2),
+                    inset 0 -1px 0 rgba(0, 0, 0, 0.3);
+            }
+            .glass-button:hover {
+                background-color: rgba(59, 130, 246, 0.6); /* Dark Mode: More opaque blue on hover */
+                box-shadow:
+                    0 6px 12px -2px rgba(0, 0, 0, 0.6),
+                    0 4px 6px -3px rgba(0, 0, 0, 0.5),
+                    inset 0 1px 0 rgba(255, 255, 255, 0.2),
+                    inset 0 -1px 0 rgba(0, 0, 0, 0.4);
+            }
+            .glass-button:active {
+                box-shadow:
+                    0 2px 4px -1px rgba(0, 0, 0, 0.4),
+                    0 1px 2px -1px rgba(0, 0, 0, 0.3),
+                    inset 0 1px 0 rgba(255, 255, 255, 0.15),
+                    inset 0 -1px 0 rgba(0, 0, 0, 0.25);
+            }
+            .glass-button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            /* Light Mode: Initial gradient for light spill (blue) */
+             background: radial-gradient(circle, #60a5fa 0%, #3b82f6 70%, transparent 100%);
+             opacity: 0;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition:
+                width 0.5s ease-out,
+                height 0.5s ease-out,
+                opacity 0.5s ease-out,
+                background 0.5s ease-out;
+            z-index: 0; /* Ensure it's behind the text */
+        }
+
+        .glass-button.clicked::before {
+            width: 300%; /* Expand significantly beyond button size */
+            height: 300%;
+            opacity: 1;
+            /* Light Mode: Final gradient for full fill (blue) */
+            background: radial-gradient(circle, #60a5fa 0%, #3b82f6 70%, #3b82f6 100%);
+            transition:
+                width 0.5s ease-out,
+                height 0.5s ease-out,
+                opacity 0.5s ease-out,
+                background 0.5s ease-out;
+        }
+        .glass-button.clicked {
+            background-color: #3b82f6;
+            transform: scale(0.92); /* Compress button on click */
+            transition: background-color 0.5s ease-out, transform 0.18s cubic-bezier(0.4,0,0.2,1);
+        }
+
+        .glass-button span {
+            position: relative;
+            z-index: 3; /* Ensure text is on top */
+        }
+
+        /* Pseudo-element for hover light entering effect */
+        .glass-button::after {
+            content: '';
+            position: absolute;
+            top: var(--mouse-y, 50%); /* Default to center if JS not active yet */
+            left: var(--mouse-x, 50%); /* Default to center if JS not active yet */
+            width: 150px; /* Size of the light spill */
+            height: 150px;
+            /* Light Mode: Subtle white light */
+            background: radial-gradient(circle at center, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            opacity: 0;
+            border-radius: 50%;
+            transform: translate(-50%, -50%); /* Center the pseudo-element */
+            transition: opacity 0.3s ease; /* Smooth fade in/out */
+            pointer-events: none; /* Allows clicks to pass through */
+            z-index: 2;
+        }
+        .glass-button:hover::after {
+            opacity: 1;
+        }
+        .glass-button .ripple {
+            position: absolute;
+            border-radius: 50%;
+            transform: scale(0);
+            background: rgba(255,255,255,0.35);
+            pointer-events: none;
+            animation: ripple-effect 0.45s linear;
+            z-index: 1;
+        }
+        @keyframes ripple-effect {
+            to {
+                transform: scale(2.5);
+                opacity: 0;
+            }
+        }
